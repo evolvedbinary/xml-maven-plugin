@@ -32,7 +32,7 @@
       <plugin>
         <groupId>com.evolvedbinary.maven.mojohaus</groupId>
         <artifactId>xml-maven-plugin</artifactId>
-        <version>0.2</version>
+        <version>@project.version@</version>
         <executions>
           <execution>
             <goals>
