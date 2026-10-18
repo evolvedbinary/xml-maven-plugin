@@ -1,0 +1,45 @@
+version: 2.1
+
+jobs:
+  build-and-test:
+    parameters:
+      jdk_version:
+        type: string
+      compute_size:
+        type: string
+        default: small
+    docker:
+      - image: cimg/openjdk:<< parameters.jdk_version >>
+    resource_class: << parameters.compute_size >>
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            # when lock file changes, use increasingly general patterns to restore cache
+            - maven-repo-v1-{{ .Branch }}-{{ checksum "pom.xml" }}
+            - maven-repo-v1-{{ .Branch }}-
+            - maven-repo-v1-
+      - run:
+          name: Build
+          command: mvn -V -B -DskipTests clean package
+      - run:
+          name: Test
+          command: mvn clean verify
+      - run:
+          name: Integration Test
+          environment:
+            MAVEN_OPTS: "-XX:ActiveProcessorCount=1"
+          command: mvn clean verify -DskipTests -Prun-its
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: maven-repo-v1-{{ .Branch }}-{{ checksum "pom.xml" }}
+
+workflows:
+  ci:
+    jobs:
+      - build-and-test:
+          name: build-and-test-jdk-<<matrix.jdk_version>>
+          matrix:
+            parameters:
+              jdk_version: ["8.0", "17.0", "21.0", "25.0"]

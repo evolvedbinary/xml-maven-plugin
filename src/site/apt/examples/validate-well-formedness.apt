@@ -30,7 +30,7 @@ Checking, whether XML files are well formed
     <plugins>
       ...
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+        <groupId>com.evolvedbinary.maven.mojohaus</groupId>
         <artifactId>xml-maven-plugin</artifactId>
         <executions>
           <execution>

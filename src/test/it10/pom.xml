@@ -18,7 +18,7 @@
 -->
 <project>
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.codehaus.mojo.xml</groupId>
+  <groupId>com.evolvedbinary.maven.mojohaus.xml-maven-plugin.it</groupId>
   <artifactId>it10</artifactId>
   <version>0.1</version>
   <name>Maven XML Plugin IT 10</name>
@@ -26,7 +26,7 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+        <groupId>com.evolvedbinary.maven.mojohaus</groupId>
         <artifactId>xml-maven-plugin</artifactId>
         <version>0.2</version>
         <configuration>

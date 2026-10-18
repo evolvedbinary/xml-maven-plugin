@@ -7,9 +7,11 @@
     <version>97</version>
   </parent>
 
+  <groupId>com.evolvedbinary.maven.mojohaus</groupId>
   <artifactId>xml-maven-plugin</artifactId>
   <version>1.2.3-SNAPSHOT</version>
   <packaging>maven-plugin</packaging>
+
   <name>XML Maven Plugin</name>
   <description>A plugin for various XML related tasks like validation, transformation, and the like.</description>
   <url>https://www.mojohaus.org/xml-maven-plugin/</url>
@@ -94,6 +96,10 @@
       <name>Ross Lamont</name>
       <email>rlamont@componentcorp.com</email>
     </contributor>
+    <contributor>
+      <name>Adam Retter</name>
+      <email>adam@evolvedbinary.com</email>
+    </contributor>
   </contributors>
 
   <prerequisites>
@@ -101,25 +107,23 @@
   </prerequisites>
 
   <scm>
-    <connection>scm:git:https://github.com/mojohaus/xml-maven-plugin.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/mojohaus/xml-maven-plugin.git</developerConnection>
+    <connection>scm:git:https://github.com/evolvedbinary/xml-maven-plugin.git</connection>
+    <developerConnection>scm:git:https://github.com/evolvedbinary/xml-maven-plugin.git</developerConnection>
     <tag>HEAD</tag>
-    <url>https://github.com/mojohaus/xml-maven-plugin/blob/master</url>
+    <url>https://github.com/evolvedbinary/xml-maven-plugin/blob/main</url>
   </scm>
 
   <issueManagement>
     <system>github</system>
-    <url>https://github.com/mojohaus/xml-maven-plugin/issues</url>
+    <url>https://github.com/evolvedbinary/xml-maven-plugin/issues</url>
   </issueManagement>
 
   <ciManagement>
     <system>github</system>
-    <url>https://github.com/mojohaus/xml-maven-plugin/actions</url>
+    <url>https://dl.circleci.com/status-badge/redirect/gh/evolvedbinary/xml-maven-plugin</url>
   </ciManagement>
 
   <properties>
-    <!-- run the ITs in parallel, one per CPU core -->
-    <invoker.parallelThreads>1C</invoker.parallelThreads>
     <mavenVersion>3.9.16</mavenVersion>
     <minimalMavenBuildVersion>3.9.0</minimalMavenBuildVersion>
     <project.build.outputTimestamp>2026-09-11T21:27:20Z</project.build.outputTimestamp>
@@ -242,6 +246,8 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-invoker-plugin</artifactId>
             <configuration>
+              <!-- run the ITs in parallel, one per CPU core -->
+              <parallelThreads>1C</parallelThreads>
               <environmentVariables>
                 <!-- each IT is a short-lived JVM: C2 compilation and parallel GC only add startup time -->
                 <JAVA_TOOL_OPTIONS>-XX:TieredStopAtLevel=1 -XX:+UseSerialGC</JAVA_TOOL_OPTIONS>

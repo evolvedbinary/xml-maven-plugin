@@ -32,7 +32,7 @@ Check whether XML files matching a RelaxNG schema
     <plugins>
       ...
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+        <groupId>com.evolvedbinary.maven.mojohaus</groupId>
         <artifactId>xml-maven-plugin</artifactId>
         <dependencies>
           <dependency>

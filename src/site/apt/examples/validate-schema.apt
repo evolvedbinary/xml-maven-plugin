@@ -31,7 +31,7 @@ Checking whether XML files are matching an XML Schema
     <plugins>
       ...
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+        <groupId>com.evolvedbinary.maven.mojohaus</groupId>
         <artifactId>xml-maven-plugin</artifactId>
         <executions>
           <execution>

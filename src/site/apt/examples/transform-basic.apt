@@ -31,7 +31,7 @@ Transforming XML files by applying an XSLT stylesheet
     <plugins>
       ...
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+        <groupId>com.evolvedbinary.maven.mojohaus</groupId>
         <artifactId>xml-maven-plugin</artifactId>
         <executions>
           <execution>
