@@ -28,6 +28,7 @@
       <plugin>
         <groupId>com.evolvedbinary.maven.mojohaus</groupId>
         <artifactId>xml-maven-plugin</artifactId>
+        <version>@project.version@</version>
         <executions>
           <execution>
             <goals>
