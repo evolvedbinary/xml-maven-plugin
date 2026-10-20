@@ -9,7 +9,7 @@
 
   <groupId>com.evolvedbinary.maven.mojohaus</groupId>
   <artifactId>xml-maven-plugin</artifactId>
-  <version>1.2.3-RC3</version>
+  <version>1.2.3-SNAPSHOT</version>
   <packaging>maven-plugin</packaging>
 
   <name>XML Maven Plugin</name>
@@ -109,7 +109,7 @@
   <scm>
     <connection>scm:git:https://github.com/evolvedbinary/xml-maven-plugin.git</connection>
     <developerConnection>scm:git:https://github.com/evolvedbinary/xml-maven-plugin.git</developerConnection>
-    <tag>1.2.3-RC3</tag>
+    <tag>HEAD</tag>
     <url>https://github.com/evolvedbinary/xml-maven-plugin/blob/main</url>
   </scm>
 
@@ -126,7 +126,7 @@
   <properties>
     <mavenVersion>3.9.16</mavenVersion>
     <minimalMavenBuildVersion>3.9.0</minimalMavenBuildVersion>
-    <project.build.outputTimestamp>2026-10-20T18:18:17Z</project.build.outputTimestamp>
+    <project.build.outputTimestamp>2026-10-20T18:18:36Z</project.build.outputTimestamp>
   </properties>
 
   <dependencyManagement>
